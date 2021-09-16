@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    alert弹窗事件<button onclick="button0()">点击弹窗</button><br/>
+    confirm弹窗事件<button onclick="button1()">点击弹窗</button><p id="myp0" style="float:right"></p><br/>
+    prompt弹窗事件<button onclick="button2()">点击弹窗</button><p id="myp1" style="float:right"></p><br/>
+    <button onclick="button3()">open点击窗口</button>
+    <button onclick="button4()">close点击关闭窗口</button>
+    <button onclick="button5()">moveBy移动窗口</button>
+    <button onclick="button6()">moveTo移动窗口</button>
+    <button onclick="button7()">resizeBy调整窗口</button>
+    <button onclick="button7()">resizeTo调整窗口</button>
+    <script>
+        function button0(){
+            alert("alert弹窗事件")
+        }
+
+        function button1(){
+            var a = confirm("confirm弹窗事件,点击确定返回值true，点击取消返回值false")
+            if (a==true) {
+                document.getElementById("myp0").innerHTML = "你点击了确定按钮"
+            }else{
+                document.getElementById("myp0").innerHTML = "你点击了取消按钮"
+            }
+        }
+
+        function button2(){
+            var b = prompt("prompt文本框弹窗事件")
+            document.getElementById("myp1").innerHTML = "您输入的是"+b;
+        }
+
+        function button3(){
+            c = window.open("", null, "width=200 , height=200", true)
+            c.document.write("open打开一个新的浏览器窗口");
+        }
+        function button4(){
+            c.focus();//获取焦点
+            c.close()//关闭窗口
+        }
+        function button5(){
+            c.moveBy(200,200)//相对当前窗口移动指定像素
+            c.focus()//获取焦点
+        }
+        function button6(){
+            c.moveTo(0,0);//把窗口的左上角移动到指定坐标
+            c.focus()//获取焦点
+        }
+        function button7(){
+            c.resizeBy(100,100);//resizeBy调整窗口大小
+            c.focus()//获取焦点
+        }
+        function button8(){
+            c.resizeTo(100,100);//resizeTo调整窗口大小
+            c.focus()//获取焦点
+        }
+    </script>
+
+</body>
+</html>
