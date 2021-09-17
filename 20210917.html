@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		#box {
+			width: 200px;
+			height: 200px;
+			border: 1px solid palegreen;
+			font-size: 35px;
+			line-height: 200px;
+			text-align: center;
+			margin: 20px auto;
+			display: block;
+		}
+
+		#btn {
+			display: block;
+			width: 200px;
+			height: 35px;
+			margin: 0 auto;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			var btn = document.getElementById("btn");
+			var val;
+			var box = document.getElementById("box");
+			var a = parseInt(box);
+			btn.onclick = function () {
+
+				if (this.innerText == "开始") {
+					this.innerText = "暂停";
+					var time = setInterval(function () {
+						box.value--;
+						if (box.value < 0) {
+							clearInterval(val)
+							box.value = ""
+							btn.innerText = "开始";
+						}
+					}, 1000)
+
+					val = time;
+				}
+				else {
+					this.innerText = "开始";
+					clearInterval(val)
+				}
+
+			}
+
+		}
+
+
+
+	</script>
+</head>
+
+<body>
+	<input type="text" id="box" placeholder="请输入数字">
+	<button type="button" id="btn">开始</button>
+</body>
+
+</html>
